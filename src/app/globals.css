@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FAF7F0;
+    --foreground: #1A1A1A;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Eyebrow label component */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    color: #C9A961;
+    font-family: var(--font-karla);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+.eyebrow::before, .eyebrow::after {
+    content: "";
+    width: 60px;
+    height: 1px;
+    background-color: #C9A961;
+    opacity: 0.5;
+}
+.eyebrow.start::before {
+    display: none;
+}
+
+/* Gold Button gradient */
+.btn-gold {
+    background: linear-gradient(180deg, #E3C88A 0%, #C9A961 100%);
+    box-shadow: 0 4px 14px rgba(201, 169, 97, 0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+    color: #241610;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201, 169, 97, 0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.btn-gold-glow {
+    background: linear-gradient(180deg, #E3C88A 0%, #C9A961 100%);
+    box-shadow: 0 0 20px rgba(201, 169, 97, 0.15), inset 0 1px 0 rgba(255,255,255,0.2);
+    color: #241610;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.btn-gold-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(201, 169, 97, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+/* Form inputs */
+.input-gold-focus:focus {
+    border-color: #C9A961;
+    outline: none;
+    box-shadow: 0 0 0 1px #C9A961;
+}
+
+/* Horizontal scroll hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
