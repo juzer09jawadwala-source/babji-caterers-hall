@@ -80,26 +80,28 @@ function Card({
           y: yOffset,
           top: `calc(15vh + ${index * 20}px)` 
         }} 
-        className="relative w-[90vw] md:w-[800px] h-[55vh] md:h-[500px] rounded-[32px] overflow-hidden shadow-2xl origin-top border border-ivory/20 group"
+        className="relative w-[90vw] md:w-[800px] h-[55vh] md:h-[500px] rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgb(0,0,0,0.3)] origin-top border-4 border-ivory/30 group ring-1 ring-black/5"
       >
         <Image 
           src={item.img} 
           alt={item.name} 
           fill 
-          className="object-cover transition-transform duration-1000 group-hover:scale-105" 
+          className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" 
+          unoptimized
         />
         
-        {/* Soft overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-transparent to-transparent pointer-events-none" />
+        {/* Luxury gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/20 to-transparent pointer-events-none opacity-80" />
+        <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[36px] pointer-events-none" />
         
         {/* Badge */}
-        <div className="absolute top-8 left-8 bg-espresso/80 backdrop-blur-md px-4 py-2 rounded-full border border-ivory/20">
-          <span className="font-sans text-[10px] tracking-[0.2em] text-ivory uppercase font-bold">{item.badge}</span>
+        <div className="absolute top-8 left-8 md:top-10 md:left-10 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20 shadow-lg">
+          <span className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-ivory uppercase font-bold drop-shadow-md">{item.badge}</span>
         </div>
 
         {/* Title */}
-        <div className="absolute bottom-8 left-8 right-8">
-          <h3 className="font-serif text-3xl md:text-5xl text-ivory tracking-wide">{item.name}</h3>
+        <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12 md:right-12">
+          <h3 className="font-serif text-3xl md:text-5xl lg:text-6xl text-ivory tracking-wide font-medium drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">{item.name}</h3>
         </div>
       </motion.div>
     </div>

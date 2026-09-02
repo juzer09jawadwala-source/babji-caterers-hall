@@ -380,28 +380,32 @@ export default function Home() {
                 avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=150&h=150&fit=crop&q=80"
               }
             ].map((t, i) => (
-              <SectionReveal key={i} delay={0.4 + (i * 0.1)}>
-                <div className="flex flex-col h-full bg-transparent">
-                  <div className="flex gap-1.5 mb-6">
-                    {[...Array(5)].map((_, j) => (
-                      <svg key={j} className="w-5 h-5 text-gold fill-gold" viewBox="0 0 24 24">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="font-sans text-ink/80 text-[15px] md:text-[16px] leading-relaxed mb-10 flex-grow">"{t.quote}"</p>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-sm">
-                       <Image src={t.avatar} alt={t.name} fill className="object-cover" unoptimized />
+                <SectionReveal key={i} delay={0.4 + (i * 0.1)}>
+                  <div className="flex flex-col h-full bg-white/40 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-espresso/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(201,169,97,0.1)] hover:-translate-y-2 hover:border-gold/30 transition-all duration-500 relative group overflow-hidden">
+                    {/* Decorative Top Accent */}
+                    <div className="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    <div className="flex gap-1.5 mb-8">
+                      {[...Array(5)].map((_, j) => (
+                        <svg key={j} className="w-5 h-5 text-gold fill-gold drop-shadow-sm" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                      ))}
                     </div>
-                    <div>
-                      <div className="font-sans font-bold text-espresso">{t.name}</div>
-                      <div className="font-sans text-sm text-ink/50 mt-0.5">{t.type}</div>
+                    
+                    <p className="font-serif text-espresso/90 text-lg md:text-xl leading-relaxed mb-10 flex-grow italic">"{t.quote}"</p>
+                    
+                    <div className="flex items-center gap-4 mt-auto pt-6 border-t border-espresso/5">
+                      <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-md ring-2 ring-gold/20">
+                         <Image src={t.avatar} alt={t.name} fill className="object-cover" unoptimized />
+                      </div>
+                      <div>
+                        <div className="font-sans font-bold text-espresso tracking-wide">{t.name}</div>
+                        <div className="font-sans text-xs uppercase tracking-widest text-gold mt-1">{t.type}</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SectionReveal>
+                </SectionReveal>
             ))}
           </div>
         </div>

@@ -28,8 +28,8 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-[60] transition-all duration-300 ${
-          scrolled ? 'bg-ivory/95 backdrop-blur-md py-3 border-b border-gold/20 shadow-sm' : 'bg-transparent py-6 border-b border-transparent'
+        className={`fixed top-0 inset-x-0 z-[60] transition-all duration-500 ease-in-out ${
+          scrolled ? 'bg-ivory/85 backdrop-blur-2xl py-3 border-b border-espresso/5 shadow-sm' : 'bg-gradient-to-b from-black/40 to-transparent py-6 border-b border-transparent'
         }`}
       >
         <div className="max-w-[1240px] mx-auto px-6 md:px-12 flex items-center justify-between">
