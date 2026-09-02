@@ -90,10 +90,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased relative selection:bg-gold-light/40 selection:text-espresso overflow-x-hidden">
+      <body className="font-sans antialiased relative selection:bg-gold-light/40 selection:text-espresso">
         <ScrollProgress />
         <Header />
-        <main className="overflow-hidden">{children}</main>
+        <main>{children}</main>
         <Footer />
         <WhatsAppFloat />
       </body>
