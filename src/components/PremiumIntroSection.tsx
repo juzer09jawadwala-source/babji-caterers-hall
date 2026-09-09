@@ -39,10 +39,10 @@ function SpiceScatter() {
           style={{
             width: spice.size,
             height: spice.size,
-            right: \\%\,
-            bottom: \\%\,
+            right: `${spice.x}%`,
+            bottom: `${spice.y}%`,
             backgroundColor: spice.color,
-            filter: spice.blur ? \lur(\px)\ : 'none',
+            filter: spice.blur ? `blur(${spice.blur}px)` : 'none',
             boxShadow: spice.blur === 0 ? '1px 2px 4px rgba(0,0,0,0.15)' : 'none'
           }}
         />
