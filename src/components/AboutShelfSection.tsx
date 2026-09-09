@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -6,7 +6,7 @@ import { SectionReveal } from './SectionReveal';
 
 function ShelfPlate({ img, className = "" }: { img: string; className?: string }) {
   return (
-    <div className={elative w-[220px] md:w-[280px] h-[160px] md:h-[200px] flex items-center justify-center }>
+    <div className={`relative w-[220px] md:w-[280px] h-[160px] md:h-[200px] flex items-center justify-center ${className}`}>
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[160px] md:w-[200px] h-[30px] md:h-[40px] bg-[#EBE7DF] rounded-sm transform -skew-x-[30deg] shadow-[-20px_30px_40px_rgba(0,0,0,0.15)] z-0">
         <div className="absolute -bottom-[15px] md:-bottom-[20px] left-0 w-full h-[15px] md:h-[20px] bg-[#D4CFC3] transform skew-x-[30deg] origin-top rounded-b-sm border-b border-l border-white/20"></div>
         <div className="absolute top-0 -right-[15px] md:-right-[20px] w-[15px] md:w-[20px] h-full bg-[#C2BCB0] transform skew-y-[60deg] origin-left rounded-r-sm border-r border-b border-white/20"></div>
