@@ -15,8 +15,8 @@ export function PremiumIntroSection() {
         <Image src="/images/dice_transparent.png" alt="Dice decoration" fill className="object-contain drop-shadow-md" unoptimized />
       </div>
 
-      {/* Beads image in the corner (Bottom Right spilling downwards) */}
-      <div className="absolute bottom-0 right-[-10%] w-[450px] md:w-[700px] lg:w-[900px] h-[350px] md:h-[550px] lg:h-[700px] translate-y-[25%] pointer-events-none z-20 opacity-95 drop-shadow-lg">
+      {/* Beads image in the corner (Contained within section) */}
+      <div className="absolute bottom-0 right-[-10%] w-[450px] md:w-[700px] lg:w-[900px] h-[350px] md:h-[550px] lg:h-[700px] pointer-events-none z-20 opacity-95 drop-shadow-lg">
         <Image src="/images/beads_transparent.png" alt="Beads decoration" fill className="object-contain object-right-bottom" unoptimized />
       </div>
 
