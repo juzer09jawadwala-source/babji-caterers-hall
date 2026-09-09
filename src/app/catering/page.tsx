@@ -11,24 +11,103 @@ export const metadata = {
 export default function CateringPage() {
   return (
     <div className="bg-ivory selection:bg-gold-light/40 selection:text-espresso">
-      {/* 6.1 Hero (espresso) */}
-      <section className="bg-espresso pt-40 pb-24 md:pt-52 md:pb-32 px-6 md:px-12 text-center rounded-b-[40px] shadow-2xl relative z-10">
-        <div className="max-w-[800px] mx-auto flex flex-col items-center">
-          <div className="eyebrow mb-8">LET'S CATER IT</div>
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-ivory mb-6 leading-[1.05]">
-            Planning a wedding, pre-wedding<br className="hidden md:block"/> or family function?
-          </h1>
-          <p className="font-sans text-ivory/70 text-lg mb-10 max-w-lg">
-            Tell us your date and guest count. We'll cook, serve and take care of it all — you just show up and celebrate.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-            <Link href="#book" className="btn-gold rounded-full px-8 py-4 font-semibold text-sm tracking-widest uppercase w-full sm:w-auto">
-              Book Now &rarr;
-            </Link>
-            <Link href="#menu" className="rounded-full px-8 py-4 font-semibold text-sm tracking-widest uppercase border border-ivory/30 text-ivory hover:bg-ivory hover:text-espresso transition-colors w-full sm:w-auto">
-              See our menu
-            </Link>
+      {/* 6.1 Hero (Asymmetric Forest/Ivory Layout) */}
+      <section className="relative w-full min-h-[95vh] bg-ivory pt-0 overflow-hidden flex items-center">
+        
+        {/* The Forest Green Background Block (Left Side) */}
+        <div className="absolute top-0 left-0 w-full md:w-[65%] lg:w-[60%] h-[85%] bg-forest md:rounded-br-[80px] z-0">
+          {/* Subtle curved lines/pattern */}
+          <div className="absolute bottom-10 left-10 w-[200px] h-[100px] border-b border-l border-white/5 rounded-bl-[100px] pointer-events-none"></div>
+          <div className="absolute bottom-16 left-16 w-[250px] h-[150px] border-b border-l border-white/5 rounded-bl-[150px] pointer-events-none"></div>
+        </div>
+
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 pt-32 pb-32 flex flex-col md:flex-row items-center w-full">
+          
+          {/* Left Content Area */}
+          <div className="w-full md:w-[55%] pr-0 md:pr-16 pt-8 md:pt-12 text-left">
+            <SectionReveal>
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 backdrop-blur-sm mb-8">
+                <div className="w-2 h-2 rounded-full bg-gold"></div>
+                <span className="font-sans text-xs tracking-[0.2em] uppercase text-gold drop-shadow-sm">Exquisite Catering Services</span>
+              </div>
+              
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-[5.5rem] text-ivory mb-6 leading-[1.02] drop-shadow-md">
+                The Best Events<br />Start Here
+              </h1>
+              <p className="font-sans text-ivory/80 text-lg md:text-xl mb-10 max-w-lg font-light tracking-wide">
+                Quality Ingredients. Top Talent. Genuine Hospitality.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <Link href="#book" className="btn-gold rounded-full px-8 py-4 font-semibold text-sm tracking-widest uppercase w-full sm:w-auto text-center shadow-lg">
+                  Get a Quote &rarr;
+                </Link>
+              </div>
+
+              {/* Stats */}
+              <div className="flex items-center gap-10 md:gap-16 mt-16 md:mt-24 pt-8 border-t border-white/10">
+                <div>
+                  <div className="font-serif text-5xl md:text-6xl text-gold mb-2">40<span className="text-3xl">+</span></div>
+                  <div className="font-sans text-xs uppercase tracking-widest text-ivory/90 mb-1">Years Experience</div>
+                  <div className="font-sans text-xs text-ivory/50 font-light">among Babji's executive team</div>
+                </div>
+                <div>
+                  <div className="font-serif text-5xl md:text-6xl text-gold mb-2">250<span className="text-3xl">+</span></div>
+                  <div className="font-sans text-xs uppercase tracking-widest text-ivory/90 mb-1">Events Each Year</div>
+                  <div className="font-sans text-xs text-ivory/50 font-light">across Mumbai's top venues</div>
+                </div>
+              </div>
+            </SectionReveal>
           </div>
+
+          {/* Right Content Area (Image + Testimonial Overlap) */}
+          <div className="w-full md:w-[45%] mt-16 md:mt-0 relative flex flex-col items-end">
+            <SectionReveal delay={0.2} className="relative w-full flex justify-end">
+              <div className="relative w-[100vw] md:w-[45vw] h-[50vh] md:h-[65vh] mr-[-24px] md:mr-[-48px]">
+                <Image 
+                  src="/images/hall_12.jpg" 
+                  alt="Catering Setup" 
+                  fill 
+                  className="object-cover rounded-bl-[40px] md:rounded-bl-[80px]" 
+                  unoptimized
+                />
+              </div>
+
+              {/* Overlapping Testimonial Card */}
+              <div className="absolute -bottom-16 md:-bottom-24 right-4 md:-left-20 z-20 bg-[#FAF8F5] p-8 md:p-10 rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.15)] max-w-sm border border-espresso/5">
+                <div className="absolute top-8 right-8 text-espresso/5">
+                  <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                  </svg>
+                </div>
+                <div className="flex items-center gap-2 mb-6 text-gold">
+                  <div className="w-6 h-6 bg-forest rounded-full flex items-center justify-center">
+                    <div className="w-2 h-2 bg-ivory rounded-full"></div>
+                  </div>
+                  <span className="font-sans font-bold text-sm tracking-wider text-espresso">Babji</span>
+                </div>
+                <p className="font-serif text-xl md:text-2xl text-forest leading-snug mb-8 relative z-10">
+                  "The food was brilliant, Babji made everything so easy that we can't wait to use them again."
+                </p>
+                <div className="flex items-center gap-2">
+                   <div className="font-sans text-[11px] font-bold uppercase tracking-[0.15em] text-espresso">Jonny Fox,</div>
+                   <div className="font-sans text-[11px] text-ink/50">Groom</div>
+                </div>
+              </div>
+            </SectionReveal>
+          </div>
+
+        </div>
+
+        {/* Overlapping Food Plate floating on the bottom left edge */}
+        <div className="absolute bottom-0 left-[-20%] md:left-[-10%] w-[300px] h-[300px] md:w-[450px] md:h-[450px] z-20 pointer-events-none transform translate-y-[30%]">
+          <Image 
+            src="/images/chicken.png" 
+            alt="Floating Plate" 
+            fill 
+            className="object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.4)]" 
+            unoptimized
+          />
         </div>
       </section>
 
