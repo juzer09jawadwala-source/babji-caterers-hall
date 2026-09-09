@@ -10,9 +10,9 @@ export function PremiumIntroSection() {
   return (
     <section ref={containerRef} className="relative z-20 w-full bg-white pt-24 md:pt-32 pb-24 md:pb-40 px-6 md:px-12 lg:px-24 overflow-visible border-b border-black/5">
       
-      {/* Dice image on the border of the two sections (Centered) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[500px] lg:w-[600px] h-[500px] md:h-[660px] lg:h-[750px] pointer-events-none z-30">
-        <Image src="/images/dice_transparent.png" alt="Dice decoration" fill className="object-contain object-center drop-shadow-md" unoptimized />
+      {/* Dice image on the border of the two sections (Right Side, 40% Larger) */}
+      <div className="absolute top-0 right-[2%] md:right-[8%] -translate-y-1/2 w-[490px] md:w-[700px] lg:w-[840px] h-[700px] md:h-[920px] lg:h-[1050px] pointer-events-none z-30">
+        <Image src="/images/dice_transparent.png" alt="Dice decoration" fill className="object-contain object-right drop-shadow-md" unoptimized />
       </div>
 
       {/* Beads image in the corner (Contained within section, massive scale) */}
