@@ -11,12 +11,12 @@ export function PremiumIntroSection() {
     <section ref={containerRef} className="relative z-20 w-full bg-white pt-24 md:pt-32 pb-24 md:pb-40 px-6 md:px-12 lg:px-24 overflow-visible border-b border-black/5">
       
       {/* Dice image on the border of the two sections (Top Right) */}
-      <div className="absolute top-0 right-[5%] md:right-[15%] -translate-y-[45%] w-[300px] md:w-[400px] lg:w-[450px] h-[400px] md:h-[550px] lg:h-[600px] pointer-events-none z-30">
-        <Image src="/images/dice_transparent.png" alt="Dice decoration" fill className="object-contain drop-shadow-md" unoptimized />
+      <div className="absolute top-0 right-[2%] md:right-[8%] -translate-y-[45%] w-[350px] md:w-[500px] lg:w-[600px] h-[500px] md:h-[660px] lg:h-[750px] pointer-events-none z-30">
+        <Image src="/images/dice_transparent.png" alt="Dice decoration" fill className="object-contain object-top drop-shadow-md" unoptimized />
       </div>
 
-      {/* Beads image in the corner (Contained within section) */}
-      <div className="absolute bottom-0 right-[-10%] w-[450px] md:w-[700px] lg:w-[900px] h-[350px] md:h-[550px] lg:h-[700px] pointer-events-none z-20 opacity-95 drop-shadow-lg">
+      {/* Beads image in the corner (Contained within section, massive scale) */}
+      <div className="absolute bottom-0 right-[-5%] w-[500px] md:w-[800px] lg:w-[1100px] h-[400px] md:h-[600px] lg:h-[850px] pointer-events-none z-20 opacity-95 drop-shadow-lg">
         <Image src="/images/beads_transparent.png" alt="Beads decoration" fill className="object-contain object-right-bottom" unoptimized />
       </div>
 
