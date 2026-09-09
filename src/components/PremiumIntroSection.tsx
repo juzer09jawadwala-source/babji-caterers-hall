@@ -11,13 +11,13 @@ export function PremiumIntroSection() {
     <section ref={containerRef} className="relative z-20 w-full bg-white pt-24 md:pt-32 pb-24 md:pb-40 px-6 md:px-12 lg:px-24 overflow-visible border-b border-black/5">
       
       {/* Dice image on the border of the two sections */}
-      <div className="absolute top-0 left-1/2 md:left-[60%] -translate-x-1/2 -translate-y-1/2 w-[200px] md:w-[250px] h-[200px] md:h-[250px] pointer-events-none z-30 mix-blend-multiply">
-        <Image src="/images/dice.jpg" alt="Dice decoration" fill className="object-contain drop-shadow-sm" unoptimized />
+      <div className="absolute top-0 left-1/2 md:left-[60%] -translate-x-1/2 -translate-y-1/2 w-[200px] md:w-[250px] h-[200px] md:h-[250px] pointer-events-none z-30">
+        <Image src="/images/dice_transparent.png" alt="Dice decoration" fill className="object-contain drop-shadow-md" unoptimized />
       </div>
 
       {/* Beads image in the corner */}
-      <div className="absolute bottom-0 left-0 w-[200px] md:w-[350px] h-[200px] md:h-[350px] translate-y-[20%] -translate-x-[10%] pointer-events-none z-20 mix-blend-multiply opacity-90">
-        <Image src="/images/beads.jpg" alt="Beads decoration" fill className="object-contain" unoptimized />
+      <div className="absolute bottom-0 left-0 w-[200px] md:w-[350px] h-[200px] md:h-[350px] translate-y-[20%] -translate-x-[10%] pointer-events-none z-20 opacity-90 drop-shadow-lg">
+        <Image src="/images/beads_transparent.png" alt="Beads decoration" fill className="object-contain" unoptimized />
       </div>
 
       {/* Top element: rounded white element at extreme top-left as requested */}
