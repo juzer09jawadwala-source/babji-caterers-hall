@@ -4,6 +4,7 @@ import { SectionReveal } from '@/components/SectionReveal';
 import { EnquiryForm } from '@/components/EnquiryForm';
 import { Gallery } from '@/components/Gallery';
 import { HeroVideo } from '@/components/HeroVideo';
+import { PremiumIntroSection } from '@/components/PremiumIntroSection';
 
 export const metadata = {
   title: 'The Hall | Babji Caterers & Hall',
@@ -37,20 +38,15 @@ export default function HallPage() {
         </div>
       </section>
 
+      <PremiumIntroSection />
+
       {/* 2. Split Editorial Specs (ivory) */}
-      <section className="bg-ivory py-32 px-6 md:px-12 relative z-0">
+      <section className="bg-ivory pb-32 px-6 md:px-12 relative z-0">
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-          <div className="lg:col-span-5 sticky top-32">
-            <SectionReveal>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-espresso leading-[1.05] mb-8">
-                A space designed for the moments that matter.
-              </h2>
-              <p className="font-sans text-ink/70 text-lg leading-relaxed max-w-md">
-                We built this hall so our neighbors could celebrate without compromise. A clean, beautiful canvas that you can decorate as you wish, paired with the legendary food you already know.
-              </p>
-            </SectionReveal>
+          <div className="lg:col-span-5 sticky top-32 hidden lg:block">
+            {/* Kept empty to preserve the grid spacing for the specs list */}
           </div>
-          
+
           <div className="lg:col-span-7 flex flex-col">
             {[
               {
@@ -210,3 +206,4 @@ export default function HallPage() {
     </div>
   );
 }
+
