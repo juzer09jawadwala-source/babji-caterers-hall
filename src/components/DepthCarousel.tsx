@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { motion, PanInfo } from 'framer-motion';
@@ -78,7 +78,7 @@ export function DepthCarousel({ items }: DepthCarouselProps) {
                 src={item.img} 
                 alt={item.title} 
                 fill 
-                className="object-cover transition-transform duration-[1.5s] group-hover:scale-110" 
+                className="object-cover transition-transform duration-1500 group-hover:scale-110" 
                 quality={100} 
                 unoptimized 
               />

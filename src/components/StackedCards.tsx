@@ -86,7 +86,7 @@ function Card({
           src={item.img} 
           alt={item.name} 
           fill 
-          className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" 
+          className="object-cover transition-transform duration-1500 ease-out group-hover:scale-105" 
           unoptimized
         />
         

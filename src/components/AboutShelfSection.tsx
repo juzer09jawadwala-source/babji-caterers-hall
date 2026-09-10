@@ -57,7 +57,7 @@ export function AboutShelfSection() {
                 src="/images/hall_12.jpg" 
                 alt="About Us" 
                 fill 
-                className="object-cover transition-transform duration-[2s] group-hover:scale-105 rounded-[32px] md:rounded-[40px]" 
+                className="object-cover transition-transform duration-2000 group-hover:scale-105 rounded-[32px] md:rounded-[40px]" 
                 unoptimized 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-90 rounded-[32px] md:rounded-[40px]" />

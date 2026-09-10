@@ -1,27 +1,33 @@
 import { MongoClient } from "mongodb";
 
-// Reuse the Mongo connection across hot reloads / serverless invocations.
+// Lazy MongoDB connection cache across serverless invocations / hot reloads
 const uri = process.env.MONGO_URL;
 const dbName = process.env.DB_NAME || "babji";
 
 let clientPromise;
 
-if (!uri) {
-  // Defer the error to request time so the app can still build without a DB.
-  clientPromise = Promise.reject(
-    new Error("MONGO_URL is not set. Add it to web/.env.local"),
-  );
-} else if (process.env.NODE_ENV === "development") {
-  // In dev, cache on the global object so we don't open a new pool on every reload.
-  if (!global._mongoClientPromise) {
-    global._mongoClientPromise = new MongoClient(uri).connect();
+function getClientPromise() {
+  if (!uri) {
+    return Promise.reject(
+      new Error("MONGO_URL is not set. Add it to environment variables."),
+    );
   }
-  clientPromise = global._mongoClientPromise;
-} else {
-  clientPromise = new MongoClient(uri).connect();
+
+  if (process.env.NODE_ENV === "development") {
+    if (!global._mongoClientPromise) {
+      global._mongoClientPromise = new MongoClient(uri).connect();
+    }
+    return global._mongoClientPromise;
+  }
+
+  if (!clientPromise) {
+    clientPromise = new MongoClient(uri).connect();
+  }
+  return clientPromise;
 }
 
 export async function getDb() {
-  const client = await clientPromise;
+  const client = await getClientPromise();
   return client.db(dbName);
 }
+
