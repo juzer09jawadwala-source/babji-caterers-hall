@@ -40,3 +40,5 @@ Thumbs.db
 # Temporary or duplicate media
 *.mp4.tmp
 251512.mp4
+VID_*.mp4
+/*.mp4

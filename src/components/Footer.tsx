@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import { SectionReveal } from '@/components/SectionReveal';
 
 export function Footer() {
   return (
     <footer className="bg-espresso text-ivory/80 pt-24 pb-8 border-t border-gold/10">
-      <div className="max-w-[1240px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-20">
+      <SectionReveal variant="fade-up">
+        <div className="max-w-[1240px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-20">
         
         {/* Brand Column */}
         <div className="md:col-span-5 flex flex-col items-start">
@@ -71,6 +73,7 @@ export function Footer() {
         </div>
 
       </div>
+    </SectionReveal>
 
       {/* Bottom Bar */}
       <div className="max-w-[1240px] mx-auto px-6 md:px-12 pt-8 border-t border-ivory/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-ivory/40">
