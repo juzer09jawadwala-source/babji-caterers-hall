@@ -79,8 +79,8 @@ export function DepthCarousel({ items }: DepthCarouselProps) {
                 alt={item.title} 
                 fill 
                 className="object-cover transition-transform duration-1500 group-hover:scale-110" 
-                quality={100} 
-                unoptimized 
+                sizes="(max-width: 768px) 80vw, 400px"
+                quality={85}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
               

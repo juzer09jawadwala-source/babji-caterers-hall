@@ -46,9 +46,9 @@ export function Gallery() {
                 src={img.src}
                 alt="Hall Gallery"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={85}
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
-                quality={100}
-                unoptimized
               />
               <div className="absolute inset-0 bg-espresso/0 group-hover:bg-espresso/10 transition-colors duration-300" />
             </div>
@@ -84,9 +84,9 @@ export function Gallery() {
                 src={images[currentIndex].src}
                 alt="Lightbox View"
                 fill
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                quality={90}
                 className="object-contain"
-                quality={100}
-                unoptimized
               />
               
               <div className="absolute inset-y-0 left-0 flex items-center px-4">

@@ -183,7 +183,7 @@ export default function HallPage() {
             <SectionReveal className="h-full">
               {/* Elegant Arched Window Image */}
               <div className="relative w-full h-[800px] rounded-t-[500px] rounded-b-[24px] overflow-hidden shadow-2xl border-4 border-ivory/5">
-                <Image src="/images/regenerate_2K_202608301011.jpeg" alt="A real function at Babji Hall" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/regenerate_2K_202608301011.jpeg" alt="A real function at Babji Hall" fill sizes="(max-width: 1024px) 100vw, 500px" quality={85} className="object-cover" />
                 <div className="absolute inset-0 bg-espresso/20 mix-blend-overlay" />
               </div>
             </SectionReveal>

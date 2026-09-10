@@ -12,12 +12,12 @@ export function PremiumIntroSection() {
       
       {/* Dice image on the border of the two sections (Right Side, 40% Larger) */}
       <div className="absolute top-0 right-[2%] md:right-[8%] -translate-y-1/2 w-[490px] md:w-[700px] lg:w-[840px] h-[700px] md:h-[920px] lg:h-[1050px] pointer-events-none z-30">
-        <Image src="/images/dice_transparent.png" alt="Dice decoration" fill className="object-contain object-right drop-shadow-md" unoptimized />
+        <Image src="/images/dice_transparent.png" alt="Dice decoration" fill sizes="(max-width: 768px) 490px, 840px" quality={85} className="object-contain object-right drop-shadow-md" />
       </div>
 
       {/* Beads image in the corner (Contained within section, massive scale) */}
       <div className="absolute bottom-0 right-[-5%] w-[500px] md:w-[800px] lg:w-[1100px] h-[400px] md:h-[600px] lg:h-[850px] pointer-events-none z-20 opacity-95 drop-shadow-lg">
-        <Image src="/images/beads_transparent.png" alt="Beads decoration" fill className="object-contain object-right-bottom" unoptimized />
+        <Image src="/images/beads_transparent.png" alt="Beads decoration" fill sizes="(max-width: 768px) 500px, 1100px" quality={85} className="object-contain object-right-bottom" />
       </div>
 
       {/* Top element: rounded white element at extreme top-left as requested */}

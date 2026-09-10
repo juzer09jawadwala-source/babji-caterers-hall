@@ -18,7 +18,7 @@ function ShelfPlate({ img, className = "" }: { img: string; className?: string }
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
         className="absolute bottom-10 md:bottom-14 left-1/2 -translate-x-1/2 w-[140px] md:w-[180px] h-[140px] md:h-[180px] z-10 drop-shadow-[0_15px_15px_rgba(0,0,0,0.3)] cursor-pointer"
       >
-        <Image src={img} alt="Signature Dish" fill className="object-contain" unoptimized />
+        <Image src={img} alt="Signature Dish" fill sizes="(max-width: 768px) 140px, 180px" quality={85} className="object-contain" />
       </motion.div>
     </div>
   );
@@ -57,8 +57,9 @@ export function AboutShelfSection() {
                 src="/images/hall_12.jpg" 
                 alt="About Us" 
                 fill 
+                sizes="(max-width: 768px) 100vw, 60vw"
+                quality={85}
                 className="object-cover transition-transform duration-2000 group-hover:scale-105 rounded-[32px] md:rounded-[40px]" 
-                unoptimized 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-90 rounded-[32px] md:rounded-[40px]" />
               

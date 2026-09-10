@@ -4,9 +4,12 @@ import { useState, useRef, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export function HeroVideo({ src }: { src: string }) {
+export function HeroVideo({ src, poster }: { src: string; poster?: string }) {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Auto-detect poster if not explicitly passed
+  const resolvedPoster = poster || (src.includes('hall') ? '/videos/hall-poster.jpg' : '/videos/hero-poster.jpg');
 
   // When unmuted, we need to manually set the video property
   useEffect(() => {
@@ -20,10 +23,12 @@ export function HeroVideo({ src }: { src: string }) {
       <video
         ref={videoRef}
         src={src}
+        poster={resolvedPoster}
         autoPlay
         muted
         loop
         playsInline
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
       />
       

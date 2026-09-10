@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Image from 'next/image';
 
 interface CarouselItem {
@@ -18,6 +18,8 @@ export function Carousel3D({ items }: Carousel3DProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClient, setIsClient] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { margin: "100px" });
 
   useEffect(() => {
     setIsClient(true);
@@ -26,19 +28,20 @@ export function Carousel3D({ items }: Carousel3DProps) {
   const next = () => setCurrentIndex((prev) => (prev + 1) % items.length);
   const prev = () => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
 
-  // Autoplay functionality
+  // Autoplay functionality: ONLY runs when visible in viewport to prevent background CPU/GPU drain
   useEffect(() => {
-    if (!isClient || isPaused) return;
+    if (!isClient || isPaused || !isInView) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % items.length);
     }, 4000); // 4 seconds per slide
     return () => clearInterval(interval);
-  }, [isClient, isPaused, items.length]);
+  }, [isClient, isPaused, isInView, items.length]);
 
   if (!isClient) return <div className="h-[600px] md:h-[750px] w-full" />;
 
   return (
     <div 
+      ref={containerRef}
       className="relative w-full h-[600px] md:h-[750px] flex items-start justify-center overflow-hidden py-12"
       style={{ perspective: '1500px' }}
       onMouseEnter={() => setIsPaused(true)}
@@ -101,14 +104,14 @@ export function Carousel3D({ items }: Carousel3DProps) {
                 }}
               >
                 {/* Image Card Container */}
-                <div className="relative w-full aspect-[4/5] md:aspect-[3/4] rounded-[24px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] bg-sand/30">
+                <div className="relative w-full aspect-[4/5] md:aspect-[3/4] rounded-[24px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] bg-sand/30" style={{ willChange: 'transform' }}>
                   <Image
                     src={item.img}
                     alt={item.title}
                     fill
                     className="object-cover"
-                    quality={100}
-                    unoptimized
+                    sizes="(max-width: 640px) 60vw, (max-width: 1024px) 320px, 350px"
+                    quality={85}
                   />
                   {/* Subtle curved lighting effect for 3D realism */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-white/10 pointer-events-none mix-blend-overlay" />

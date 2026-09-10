@@ -78,7 +78,8 @@ function Card({
         style={{ 
           scale, 
           y: yOffset,
-          top: `calc(15vh + ${index * 20}px)` 
+          top: `calc(15vh + ${index * 20}px)`,
+          willChange: 'transform'
         }} 
         className="relative w-[90vw] md:w-[800px] h-[55vh] md:h-[500px] rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgb(0,0,0,0.3)] origin-top border-4 border-ivory/30 group ring-1 ring-black/5"
       >
@@ -86,8 +87,9 @@ function Card({
           src={item.img} 
           alt={item.name} 
           fill 
+          sizes="(max-width: 768px) 90vw, 800px"
+          quality={85}
           className="object-cover transition-transform duration-1500 ease-out group-hover:scale-105" 
-          unoptimized
         />
         
         {/* Luxury gradient overlays */}

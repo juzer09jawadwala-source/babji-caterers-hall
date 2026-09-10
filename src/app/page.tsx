@@ -89,7 +89,7 @@ export default function Home() {
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <SectionReveal>
             <Link href="/catering" className="group relative block w-full h-[500px] md:h-[600px] rounded-[24px] overflow-hidden shadow-soft">
-              <Image src="/images/thaal.jpg" alt="Catering" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src="/images/thaal.jpg" alt="Catering" fill sizes="(max-width: 768px) 100vw, 50vw" quality={85} className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
               <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
                 <h3 className="font-serif text-4xl text-ivory mb-4">Catering</h3>
@@ -105,7 +105,7 @@ export default function Home() {
 
           <SectionReveal delay={0.1}>
             <Link href="/hall" className="group relative block w-full h-[500px] md:h-[600px] rounded-[24px] overflow-hidden shadow-soft">
-              <Image src="/images/hall_12.jpg" alt="The Hall" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src="/images/hall_12.jpg" alt="The Hall" fill sizes="(max-width: 768px) 100vw, 50vw" quality={85} className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
               <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
                 <h3 className="font-serif text-4xl text-ivory mb-4">The Hall</h3>
@@ -188,7 +188,7 @@ export default function Home() {
                 <div className={`${isEven ? 'md:order-2' : ''}`}>
                   <SectionReveal>
                     <div className="relative aspect-square md:aspect-[4/5] rounded-[24px] overflow-hidden">
-                      <Image src={dish.img} alt={dish.name} fill className="object-cover" />
+                      <Image src={dish.img} alt={dish.name} fill sizes="(max-width: 768px) 100vw, 50vw" quality={85} className="object-cover" />
                     </div>
                   </SectionReveal>
                 </div>
@@ -287,61 +287,61 @@ export default function Home() {
             {/* Col 1 */}
             <SectionReveal delay={0.1} className="hidden lg:flex flex-col gap-4 translate-y-8">
               <div className="relative w-[70px] h-[100px] rounded-[16px] overflow-hidden shadow-md">
-                <Image src="/images/sizzler.jpg" alt="Food" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/sizzler.jpg" alt="Food" fill sizes="100px" quality={80} className="object-cover" />
               </div>
               <div className="relative w-[70px] h-[140px] rounded-[16px] overflow-hidden shadow-md">
-                <Image src="/images/hall_12.jpg" alt="Food" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/hall_12.jpg" alt="Food" fill sizes="100px" quality={80} className="object-cover" />
               </div>
             </SectionReveal>
             
             {/* Col 2 */}
             <SectionReveal delay={0.2} className="hidden md:flex flex-col gap-4 -translate-y-4">
               <div className="relative w-[90px] h-[110px] rounded-[20px] overflow-hidden shadow-md">
-                <Image src="/images/thaal.jpg" alt="Food" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/thaal.jpg" alt="Food" fill sizes="120px" quality={80} className="object-cover" />
               </div>
               <div className="relative w-[90px] h-[130px] rounded-[20px] overflow-hidden shadow-md">
-                <Image src="/images/rollet.jpg" alt="Food" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/rollet.jpg" alt="Food" fill sizes="120px" quality={80} className="object-cover" />
               </div>
             </SectionReveal>
 
             {/* Col 3 */}
             <SectionReveal delay={0.3} className="hidden sm:block">
               <div className="relative w-[110px] md:w-[130px] h-[180px] md:h-[240px] rounded-[24px] overflow-hidden shadow-lg translate-y-6">
-                <Image src="/images/fish.jpg" alt="Food" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/fish.jpg" alt="Food" fill sizes="(max-width: 768px) 110px, 130px" quality={80} className="object-cover" />
               </div>
             </SectionReveal>
 
             {/* Col 4 (Center Hero Pill) */}
             <SectionReveal delay={0.4} className="z-10">
               <div className="relative w-[140px] sm:w-[160px] md:w-[200px] h-[240px] sm:h-[280px] md:h-[340px] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-xl border-4 border-ivory">
-                <Image src="/images/regenerate_2K_202608301011.jpeg" alt="Centerpiece" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/regenerate_2K_202608301011.jpeg" alt="Centerpiece" fill sizes="(max-width: 768px) 200px, 340px" quality={85} className="object-cover" />
               </div>
             </SectionReveal>
 
             {/* Col 5 */}
             <SectionReveal delay={0.5} className="hidden sm:flex flex-col gap-4 -translate-y-8">
               <div className="relative w-[110px] md:w-[130px] h-[110px] md:h-[130px] rounded-[24px] overflow-hidden shadow-lg">
-                <Image src="/images/hall_12.jpg" alt="Food" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/hall_12.jpg" alt="Food" fill sizes="(max-width: 768px) 110px, 130px" quality={80} className="object-cover" />
               </div>
               <div className="relative w-[110px] md:w-[130px] h-[140px] md:h-[180px] rounded-[24px] overflow-hidden shadow-lg">
-                <Image src="/images/sizzler.jpg" alt="Food" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/sizzler.jpg" alt="Food" fill sizes="(max-width: 768px) 110px, 130px" quality={80} className="object-cover" />
               </div>
             </SectionReveal>
 
             {/* Col 6 */}
             <SectionReveal delay={0.6} className="hidden md:block">
               <div className="relative w-[90px] h-[220px] rounded-[20px] overflow-hidden shadow-md translate-y-4">
-                <Image src="/images/rollet.jpg" alt="Food" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/rollet.jpg" alt="Food" fill sizes="120px" quality={80} className="object-cover" />
               </div>
             </SectionReveal>
 
             {/* Col 7 */}
             <SectionReveal delay={0.7} className="hidden lg:flex flex-col gap-4 -translate-y-6">
               <div className="relative w-[70px] h-[100px] rounded-[16px] overflow-hidden shadow-md">
-                <Image src="/images/fish.jpg" alt="Food" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/fish.jpg" alt="Food" fill sizes="100px" quality={80} className="object-cover" />
               </div>
               <div className="relative w-[70px] h-[120px] rounded-[16px] overflow-hidden shadow-md">
-                <Image src="/images/thaal.jpg" alt="Food" fill className="object-cover" quality={100} unoptimized />
+                <Image src="/images/thaal.jpg" alt="Food" fill sizes="100px" quality={80} className="object-cover" />
               </div>
             </SectionReveal>
           </div>
@@ -396,7 +396,7 @@ export default function Home() {
                   
                   <div className="flex items-center gap-4">
                     <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-sm">
-                       <Image src={t.avatar} alt={t.name} fill className="object-cover" unoptimized />
+                       <Image src={t.avatar} alt={t.name} fill sizes="48px" quality={80} className="object-cover" />
                     </div>
                     <div>
                       <div className="font-sans font-bold text-espresso">{t.name}</div>

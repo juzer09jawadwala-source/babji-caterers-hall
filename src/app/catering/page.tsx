@@ -68,8 +68,9 @@ export default function CateringPage() {
                   src="/images/hall_12.jpg" 
                   alt="Catering Setup" 
                   fill 
+                  sizes="(max-width: 768px) 100vw, 45vw"
+                  quality={85}
                   className="object-cover rounded-bl-[40px] md:rounded-bl-[80px]" 
-                  unoptimized
                 />
               </div>
 
@@ -105,8 +106,9 @@ export default function CateringPage() {
             src="/images/chicken.png" 
             alt="Floating Plate" 
             fill 
+            sizes="(max-width: 768px) 300px, 450px"
+            quality={85}
             className="object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.4)]" 
-            unoptimized
           />
         </div>
       </section>

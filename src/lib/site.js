@@ -33,7 +33,7 @@ export const SITE = {
     "/images/logo.jpg",
 
   heroVideo:
-    "/videos/hero.mp4",
+    "/videos/251512.mp4",
   interviewVideo:
     "/videos/interview.mp4",
   hallVideo:
