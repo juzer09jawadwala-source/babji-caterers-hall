@@ -27,15 +27,13 @@ export function PremiumIntroSection() {
         
         {/* Left Content Area (approx 48%) */}
         <div className="md:col-span-6 lg:col-span-5 flex flex-col pt-12 md:pt-16 z-20 relative">
-          <SectionReveal variant="heading">
+          <SectionReveal>
             <h2 className="font-sans text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] text-[#2D2D2D] font-extrabold leading-[1.05] mb-6 tracking-tight">
               Premier Catering<br />
               Services Serving<br />
               Western MA
             </h2>
-          </SectionReveal>
-          
-          <SectionReveal variant="fade-up" delay={0.15}>
+            
             <h3 className="font-sans text-xl md:text-2xl text-[#6B6B6B] mb-8 font-normal">
               For any affair, on any budget.
             </h3>

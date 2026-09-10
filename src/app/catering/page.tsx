@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { SectionReveal, RevealGroup, RevealItem } from '@/components/SectionReveal';
+import { SectionReveal } from '@/components/SectionReveal';
 import { EnquiryForm } from '@/components/EnquiryForm';
 
 export const metadata = {
@@ -25,35 +25,26 @@ export default function CateringPage() {
           
           {/* Left Content Area */}
           <div className="w-full md:w-[55%] pr-0 md:pr-16 pt-8 md:pt-12 text-left">
-            <SectionReveal variant="fade-up">
+            <SectionReveal>
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 backdrop-blur-sm mb-8">
                 <div className="w-2 h-2 rounded-full bg-gold"></div>
                 <span className="font-sans text-xs tracking-[0.2em] uppercase text-gold drop-shadow-sm">Exquisite Catering Services</span>
               </div>
-            </SectionReveal>
-            
-            <SectionReveal variant="heading" delay={0.1}>
+              
               <h1 className="font-serif text-5xl md:text-6xl lg:text-[5.5rem] text-ivory mb-6 leading-[1.02] drop-shadow-md">
                 The Best Events<br />Start Here
               </h1>
-            </SectionReveal>
-
-            <SectionReveal variant="fade-up" delay={0.15}>
               <p className="font-sans text-ivory/80 text-lg md:text-xl mb-10 max-w-lg font-light tracking-wide">
                 Quality Ingredients. Top Talent. Genuine Hospitality.
               </p>
-            </SectionReveal>
-            
-            <SectionReveal variant="scale" delay={0.2}>
+              
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                 <Link href="#book" className="btn-gold rounded-full px-8 py-4 font-semibold text-sm tracking-widest uppercase w-full sm:w-auto text-center shadow-lg">
                   Get a Quote &rarr;
                 </Link>
               </div>
-            </SectionReveal>
 
-            {/* Stats */}
-            <SectionReveal variant="fade-up" delay={0.25}>
+              {/* Stats */}
               <div className="flex items-center gap-10 md:gap-16 mt-16 md:mt-24 pt-8 border-t border-white/10">
                 <div>
                   <div className="font-serif text-5xl md:text-6xl text-gold mb-2">40<span className="text-3xl">+</span></div>
@@ -71,7 +62,7 @@ export default function CateringPage() {
 
           {/* Right Content Area (Image + Testimonial Overlap) */}
           <div className="w-full md:w-[45%] mt-16 md:mt-0 relative flex flex-col items-end">
-            <SectionReveal variant="image" delay={0.2} className="relative w-full flex justify-end">
+            <SectionReveal delay={0.2} className="relative w-full flex justify-end">
               <div className="relative w-[100vw] md:w-[45vw] h-[50vh] md:h-[65vh] mr-[-24px] md:mr-[-48px]">
                 <Image 
                   src="/images/hall_12.jpg" 
@@ -123,17 +114,15 @@ export default function CateringPage() {
       {/* 6.2 Packages (ivory) */}
       <section id="menu" className="bg-ivory py-24 md:py-32 px-6 md:px-12 -mt-[40px] pt-[80px]">
         <div className="max-w-[1240px] mx-auto">
-          <SectionReveal variant="heading">
-            <div className="flex flex-col items-center text-center mb-20">
-              <div className="eyebrow mb-6">MENU & PACKAGES</div>
-              <h2 className="font-serif text-4xl md:text-5xl text-espresso mb-4 leading-[1.05]">Three ways to feast.</h2>
-              <p className="font-sans text-ink/70 text-lg">Scroll to explore each package — prices are placeholders and are tailored during the tasting.</p>
-            </div>
-          </SectionReveal>
+          <div className="flex flex-col items-center text-center mb-20">
+            <div className="eyebrow mb-6">MENU & PACKAGES</div>
+            <h2 className="font-serif text-4xl md:text-5xl text-espresso mb-4 leading-[1.05]">Three ways to feast.</h2>
+            <p className="font-sans text-ink/70 text-lg">Scroll to explore each package — prices are placeholders and are tailored during the tasting.</p>
+          </div>
 
-          <RevealGroup stagger={0.12} className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-center">
             {/* Classic */}
-            <RevealItem variant="card">
+            <SectionReveal delay={0}>
               <div className="bg-white rounded-[16px] p-8 md:p-10 shadow-soft border border-sand">
                 <h3 className="font-serif text-3xl text-espresso mb-2">Classic</h3>
                 <p className="font-sans text-ink/60 text-sm mb-6 pb-6 border-b border-sand">Warm, homely feast for smaller gatherings.</p>
@@ -145,10 +134,10 @@ export default function CateringPage() {
                   <li className="flex items-start gap-3"><span className="text-gold mt-0.5">●</span> Rotis, salad, chutneys</li>
                 </ul>
               </div>
-            </RevealItem>
+            </SectionReveal>
 
             {/* Signature */}
-            <RevealItem variant="card">
+            <SectionReveal delay={0.1}>
               <div className="bg-white rounded-[16px] p-8 md:p-12 shadow-xl border border-gold/30 relative transform lg:-translate-y-4">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-espresso text-ivory text-[10px] font-sans font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
                   Most Loved
@@ -164,10 +153,10 @@ export default function CateringPage() {
                   <li className="flex items-start gap-3"><span className="text-gold mt-0.5">●</span> Plus all items in Classic</li>
                 </ul>
               </div>
-            </RevealItem>
+            </SectionReveal>
 
             {/* Premium */}
-            <RevealItem variant="card">
+            <SectionReveal delay={0.2}>
               <div className="bg-white rounded-[16px] p-8 md:p-10 shadow-soft border border-sand">
                 <h3 className="font-serif text-3xl text-espresso mb-2">Premium</h3>
                 <p className="font-sans text-ink/60 text-sm mb-6 pb-6 border-b border-sand">A wedding-scale spread with live counters.</p>
@@ -180,8 +169,8 @@ export default function CateringPage() {
                   <li className="flex items-start gap-3"><span className="text-gold mt-0.5">●</span> Dessert counter with sweets</li>
                 </ul>
               </div>
-            </RevealItem>
-          </RevealGroup>
+            </SectionReveal>
+          </div>
         </div>
       </section>
 
@@ -218,14 +207,14 @@ export default function CateringPage() {
             return (
               <div key={dish.id} className={`grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center ${isEven ? 'md:flex-row-reverse' : ''}`}>
                 <div className={`${isEven ? 'md:order-2' : ''}`}>
-                  <SectionReveal variant="image">
+                  <SectionReveal>
                     <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden shadow-2xl">
                       <Image src={dish.img} alt={dish.name} fill className="object-cover" />
                     </div>
                   </SectionReveal>
                 </div>
                 <div className={`${isEven ? 'md:order-1' : ''}`}>
-                  <SectionReveal variant="heading" delay={0.1}>
+                  <SectionReveal delay={0.1}>
                     <div className="w-4 h-4 rotate-45 border border-gold mb-8 hidden md:block" />
                     <div className="font-sans text-[11px] tracking-[0.25em] text-gold uppercase mb-6">SIGNATURE {dish.id}</div>
                     <h3 className="font-serif text-5xl md:text-6xl text-ivory mb-6 whitespace-pre-line leading-[1.05]">{dish.name}</h3>
@@ -244,15 +233,13 @@ export default function CateringPage() {
 
       {/* 6.4 Family dishes gallery (ivory) */}
       <section className="bg-ivory py-24 md:py-32 pl-6 md:pl-12 overflow-hidden">
-        <SectionReveal variant="heading">
-          <div className="max-w-[1240px] mx-auto mb-16 pr-6 md:pr-12">
-            <div className="eyebrow start mb-6">FAMILY DISHES</div>
-            <h2 className="font-serif text-4xl md:text-5xl text-espresso mb-4 leading-[1.05]">
-              A taste of what we cook.
-            </h2>
-            <p className="font-sans text-ink/70 text-lg">Scroll horizontally through the plates we serve at Babji celebrations.</p>
-          </div>
-        </SectionReveal>
+        <div className="max-w-[1240px] mx-auto mb-16 pr-6 md:pr-12">
+          <div className="eyebrow start mb-6">FAMILY DISHES</div>
+          <h2 className="font-serif text-4xl md:text-5xl text-espresso mb-4 leading-[1.05]">
+            A taste of what we cook.
+          </h2>
+          <p className="font-sans text-ink/70 text-lg">Scroll horizontally through the plates we serve at Babji celebrations.</p>
+        </div>
 
         <div className="flex gap-6 overflow-x-auto hide-scrollbar pb-8 snap-x snap-mandatory pr-6 md:pr-12" style={{ cursor: 'grab' }}>
           {[
@@ -278,14 +265,12 @@ export default function CateringPage() {
       {/* 6.5 How it works (sand) */}
       <section className="bg-sand py-24 md:py-32 px-6 md:px-12">
         <div className="max-w-[1240px] mx-auto">
-          <SectionReveal variant="heading">
-            <div className="flex flex-col items-center text-center mb-16">
-              <div className="eyebrow mb-6">HOW IT WORKS</div>
-              <h2 className="font-serif text-4xl md:text-5xl text-espresso leading-[1.05]">Three simple steps.</h2>
-            </div>
-          </SectionReveal>
+          <div className="flex flex-col items-center text-center mb-16">
+            <div className="eyebrow mb-6">HOW IT WORKS</div>
+            <h2 className="font-serif text-4xl md:text-5xl text-espresso leading-[1.05]">Three simple steps.</h2>
+          </div>
 
-          <RevealGroup stagger={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 step: "1",
@@ -303,7 +288,7 @@ export default function CateringPage() {
                 desc: "Our team handles cooking, setup and service — you just show up and enjoy."
               }
             ].map((s, i) => (
-              <RevealItem key={i} variant="card">
+              <SectionReveal key={i} delay={i * 0.1}>
                 <div className="bg-white p-10 rounded-[16px] shadow-soft border border-sand/50 h-full flex flex-col items-center text-center">
                   <div className="w-12 h-12 rounded-full bg-espresso text-gold flex items-center justify-center font-serif text-xl mb-6">
                     {s.step}
@@ -312,24 +297,20 @@ export default function CateringPage() {
                   <h3 className="font-serif text-2xl text-espresso mb-4">{s.title}</h3>
                   <p className="font-sans text-ink/70 leading-relaxed">{s.desc}</p>
                 </div>
-              </RevealItem>
+              </SectionReveal>
             ))}
-          </RevealGroup>
+          </div>
         </div>
       </section>
 
       {/* 6.6 Booking CTA (espresso) */}
       <section id="book" className="bg-espresso py-24 md:py-32 px-6 md:px-12">
         <div className="max-w-[700px] mx-auto">
-          <SectionReveal variant="heading">
-            <div className="flex flex-col items-center text-center mb-12">
-              <div className="eyebrow mb-6">BOOK CATERING</div>
-              <h2 className="font-serif text-4xl md:text-5xl text-ivory leading-[1.05]">Tell us about your celebration.</h2>
-            </div>
-          </SectionReveal>
-          <SectionReveal variant="card" delay={0.15}>
-            <EnquiryForm />
-          </SectionReveal>
+          <div className="flex flex-col items-center text-center mb-12">
+            <div className="eyebrow mb-6">BOOK CATERING</div>
+            <h2 className="font-serif text-4xl md:text-5xl text-ivory leading-[1.05]">Tell us about your celebration.</h2>
+          </div>
+          <EnquiryForm />
         </div>
       </section>
     </div>

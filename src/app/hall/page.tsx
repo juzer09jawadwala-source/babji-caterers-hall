@@ -1,5 +1,6 @@
+import Link from 'next/link';
 import Image from 'next/image';
-import { SectionReveal, RevealGroup, RevealItem } from '@/components/SectionReveal';
+import { SectionReveal } from '@/components/SectionReveal';
 import { EnquiryForm } from '@/components/EnquiryForm';
 import { Gallery } from '@/components/Gallery';
 import { HeroVideo } from '@/components/HeroVideo';
@@ -20,7 +21,7 @@ export default function HallPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
         
         <div className="relative z-10 w-full max-w-[1240px] mx-auto flex flex-col md:flex-row justify-between items-end gap-8">
-          <SectionReveal variant="heading">
+          <div>
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-px bg-gold" />
               <span className="font-sans text-[10px] tracking-[0.2em] text-gold uppercase font-bold">The Venue</span>
@@ -29,7 +30,7 @@ export default function HallPage() {
               The Hall <br />
               <span className="italic text-gold-light/90">at</span> Sitafalwadi
             </h1>
-          </SectionReveal>
+          </div>
           <div className="hidden md:flex flex-col items-end pb-4">
             <span className="font-sans text-xs tracking-widest text-ivory/60 uppercase mb-2">Scroll to explore</span>
             <div className="w-px h-16 bg-gradient-to-b from-gold to-transparent" />
@@ -47,42 +48,40 @@ export default function HallPage() {
           </div>
 
           <div className="lg:col-span-7 flex flex-col">
-            <RevealGroup stagger={0.12} className="flex flex-col">
-              {[
-                {
-                  title: "Capacity",
-                  val: "200 - 300 Guests",
-                  desc: "Comfortable seating for large gatherings, perfect for nikahs, receptions, and community events."
-                },
-                {
-                  title: "Catering",
-                  val: "In-house Only",
-                  desc: "No outside vendor headache. Authentic Bohra thaals, buffets, and live counters cooked by our family."
-                },
-                {
-                  title: "Decor",
-                  val: "Fully Customisable",
-                  desc: "Bring your own decorator or use our trusted partners. Stages, elaborate floral setups, and lighting welcome."
-                },
-                {
-                  title: "Facilities",
-                  val: "Ready for Events",
-                  desc: "Air-conditioned areas, dedicated washing sections for thaals, and clean guest facilities."
-                }
-              ].map((spec, i) => (
-                <RevealItem key={i} variant="card">
-                  <div className="border-t border-espresso/10 py-10 flex flex-col md:flex-row gap-6 md:gap-12 group hover:border-gold/50 transition-colors">
-                    <div className="md:w-1/3">
-                      <h3 className="font-sans text-xs tracking-[0.2em] text-gold uppercase font-bold mb-2">{spec.title}</h3>
-                      <p className="font-serif text-2xl text-espresso">{spec.val}</p>
-                    </div>
-                    <div className="md:w-2/3">
-                      <p className="font-sans text-ink/70 text-base leading-relaxed group-hover:text-ink transition-colors">{spec.desc}</p>
-                    </div>
+            {[
+              {
+                title: "Capacity",
+                val: "200 - 300 Guests",
+                desc: "Comfortable seating for large gatherings, perfect for nikahs, receptions, and community events."
+              },
+              {
+                title: "Catering",
+                val: "In-house Only",
+                desc: "No outside vendor headache. Authentic Bohra thaals, buffets, and live counters cooked by our family."
+              },
+              {
+                title: "Decor",
+                val: "Fully Customisable",
+                desc: "Bring your own decorator or use our trusted partners. Stages, elaborate floral setups, and lighting welcome."
+              },
+              {
+                title: "Facilities",
+                val: "Ready for Events",
+                desc: "Air-conditioned areas, dedicated washing sections for thaals, and clean guest facilities."
+              }
+            ].map((spec, i) => (
+              <SectionReveal key={i} delay={i * 0.1}>
+                <div className="border-t border-espresso/10 py-10 flex flex-col md:flex-row gap-6 md:gap-12 group hover:border-gold/50 transition-colors">
+                  <div className="md:w-1/3">
+                    <h3 className="font-sans text-xs tracking-[0.2em] text-gold uppercase font-bold mb-2">{spec.title}</h3>
+                    <p className="font-serif text-2xl text-espresso">{spec.val}</p>
                   </div>
-                </RevealItem>
-              ))}
-            </RevealGroup>
+                  <div className="md:w-2/3">
+                    <p className="font-sans text-ink/70 text-base leading-relaxed group-hover:text-ink transition-colors">{spec.desc}</p>
+                  </div>
+                </div>
+              </SectionReveal>
+            ))}
             <SectionReveal delay={0.4}>
               <div className="border-t border-espresso/10 w-full" />
             </SectionReveal>
@@ -93,8 +92,8 @@ export default function HallPage() {
       {/* 3. The Gallery (sand) */}
       <section className="bg-sand py-32 px-6 md:px-12 border-t border-ivory/50">
         <div className="max-w-[1240px] mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
-            <SectionReveal variant="heading">
+          <SectionReveal>
+            <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
               <div>
                 <div className="eyebrow start mb-6">INSIDE THE HALL</div>
                 <h2 className="font-serif text-5xl md:text-7xl text-espresso leading-[1.05]">
@@ -102,20 +101,16 @@ export default function HallPage() {
                   <span className="italic text-gold">Real memories.</span>
                 </h2>
               </div>
-            </SectionReveal>
-            <SectionReveal variant="fade-up" delay={0.2}>
               <p className="font-sans text-ink/70 text-lg max-w-sm text-balance">
                 Scroll through recent celebrations. We provide the canvas, you bring the color.
               </p>
-            </SectionReveal>
-          </div>
-          
-          {/* We reuse the existing Gallery component but give it a ton of breathing room */}
-          <SectionReveal variant="image" delay={0.1}>
-            <div className="mt-12 bg-white/50 p-4 md:p-8 rounded-[32px] shadow-sm border border-ivory/60">
-              <Gallery />
             </div>
           </SectionReveal>
+          
+          {/* We reuse the existing Gallery component but give it a ton of breathing room */}
+          <div className="mt-12 bg-white/50 p-4 md:p-8 rounded-[32px] shadow-sm border border-ivory/60">
+            <Gallery />
+          </div>
         </div>
       </section>
 
@@ -127,7 +122,7 @@ export default function HallPage() {
         </div>
 
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
-          <SectionReveal variant="image" className="h-full">
+          <SectionReveal className="h-full">
             {/* The Map Card */}
             <div className="w-full h-[500px] lg:h-full min-h-[500px] rounded-[32px] overflow-hidden shadow-xl border border-sand">
               <iframe
@@ -144,7 +139,7 @@ export default function HallPage() {
           </SectionReveal>
 
           <div className="flex flex-col gap-8 h-full">
-            <SectionReveal variant="card" delay={0.1}>
+            <SectionReveal delay={0.1}>
               <div className="bg-white p-10 md:p-14 rounded-[32px] shadow-soft border border-sand/50">
                 <h3 className="font-serif text-3xl md:text-4xl text-espresso mb-6">Come see the space</h3>
                 <p className="font-sans text-ink/70 text-lg leading-relaxed mb-8">
@@ -160,7 +155,7 @@ export default function HallPage() {
               </div>
             </SectionReveal>
 
-            <SectionReveal variant="card" delay={0.2} className="flex-grow">
+            <SectionReveal delay={0.2} className="flex-grow">
               <div className="bg-espresso text-ivory p-10 md:p-14 rounded-[32px] shadow-xl h-full flex flex-col justify-center">
                 <div className="eyebrow start mb-8 opacity-80">DIRECT BOOKINGS</div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
@@ -185,7 +180,7 @@ export default function HallPage() {
       <section id="book" className="bg-espresso py-32 px-6 md:px-12 relative overflow-hidden">
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
           <div className="lg:col-span-5 h-full hidden lg:block">
-            <SectionReveal variant="image" className="h-full">
+            <SectionReveal className="h-full">
               {/* Elegant Arched Window Image */}
               <div className="relative w-full h-[800px] rounded-t-[500px] rounded-b-[24px] overflow-hidden shadow-2xl border-4 border-ivory/5">
                 <Image src="/images/regenerate_2K_202608301011.jpeg" alt="A real function at Babji Hall" fill className="object-cover" quality={100} unoptimized />
@@ -194,15 +189,13 @@ export default function HallPage() {
             </SectionReveal>
           </div>
           <div className="lg:col-span-7">
-            <SectionReveal variant="heading">
+            <SectionReveal delay={0.1}>
               <div className="mb-12">
                 <div className="eyebrow start mb-6">RESERVE THE DATE</div>
                 <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-ivory leading-[1.05] tracking-tight">
                   Tell us about your <span className="italic text-gold">celebration.</span>
                 </h2>
               </div>
-            </SectionReveal>
-            <SectionReveal variant="card" delay={0.15}>
               <div className="bg-white/5 backdrop-blur-xl p-8 md:p-12 rounded-[32px] border border-ivory/10 shadow-2xl">
                 <EnquiryForm />
               </div>
@@ -213,3 +206,4 @@ export default function HallPage() {
     </div>
   );
 }
+

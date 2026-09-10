@@ -34,7 +34,7 @@ export function Gallery() {
     <>
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
         {images.map((img, i) => (
-          <SectionReveal key={i} delay={(i % 3) * 0.1} variant="image">
+          <SectionReveal key={i} delay={(i % 3) * 0.1}>
             <div
               className={`relative w-full rounded-[16px] overflow-hidden shadow-soft cursor-zoom-in group transform transition-transform duration-500 hover:-translate-y-1 ${img.aspect} break-inside-avoid`}
               onClick={() => {
