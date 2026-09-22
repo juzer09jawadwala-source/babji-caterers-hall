@@ -8,33 +8,33 @@ export function PremiumIntroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section ref={containerRef} className="relative z-20 w-full bg-white pt-24 md:pt-32 pb-24 md:pb-40 px-6 md:px-12 lg:px-24 overflow-visible border-b border-black/5">
+    <section ref={containerRef} className="relative z-20 w-full bg-white pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-24 md:pb-40 px-6 md:px-12 lg:px-24 overflow-x-clip border-b border-black/5">
       
-      {/* Dice image on the border of the two sections (Right Side, 40% Larger) */}
-      <div className="absolute top-0 right-[2%] md:right-[8%] -translate-y-1/2 w-[490px] md:w-[700px] lg:w-[840px] h-[700px] md:h-[920px] lg:h-[1050px] pointer-events-none z-30">
-        <Image src="/images/dice_transparent.png" alt="Dice decoration" fill sizes="(max-width: 768px) 490px, 840px" quality={85} className="object-contain object-right drop-shadow-md" />
+      {/* Dice image on the border of the two sections (Right Side, scaled fluidly) */}
+      <div className="absolute top-0 right-0 sm:right-[2%] md:right-[8%] -translate-y-1/2 w-[260px] sm:w-[490px] md:w-[700px] lg:w-[840px] h-[380px] sm:h-[700px] md:h-[920px] lg:h-[1050px] pointer-events-none z-30">
+        <Image src="/images/dice_transparent.png" alt="Dice decoration" fill sizes="(max-width: 640px) 260px, (max-width: 1024px) 700px, 840px" quality={85} className="object-contain object-right drop-shadow-md" />
       </div>
 
-      {/* Beads image in the corner (Contained within section, massive scale) */}
-      <div className="absolute bottom-0 right-[-5%] w-[500px] md:w-[800px] lg:w-[1100px] h-[400px] md:h-[600px] lg:h-[850px] pointer-events-none z-20 opacity-95 drop-shadow-lg">
-        <Image src="/images/beads_transparent.png" alt="Beads decoration" fill sizes="(max-width: 768px) 500px, 1100px" quality={85} className="object-contain object-right-bottom" />
+      {/* Beads image in the corner (Contained fluidly within section boundaries) */}
+      <div className="absolute bottom-0 right-0 md:right-[-5%] w-[280px] sm:w-[500px] md:w-[800px] lg:w-[1100px] h-[240px] sm:h-[400px] md:h-[600px] lg:h-[850px] pointer-events-none z-20 opacity-80 sm:opacity-95 drop-shadow-lg">
+        <Image src="/images/beads_transparent.png" alt="Beads decoration" fill sizes="(max-width: 640px) 280px, (max-width: 1024px) 800px, 1100px" quality={85} className="object-contain object-right-bottom" />
       </div>
 
       {/* Top element: rounded white element at extreme top-left as requested */}
       <div className="absolute top-0 left-0 w-[45vw] h-[18vw] bg-[#FDFDFD] rounded-br-[120px] shadow-[2px_2px_15px_rgba(0,0,0,0.02)] pointer-events-none z-0 hidden md:block"></div>
 
-      <div className="max-w-[1400px] mx-auto relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="max-w-[1400px] mx-auto relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-8 items-center">
         
-        {/* Left Content Area (approx 48%) */}
-        <div className="md:col-span-6 lg:col-span-5 flex flex-col pt-12 md:pt-16 z-20 relative">
+        {/* Left Content Area */}
+        <div className="md:col-span-6 lg:col-span-5 flex flex-col pt-6 sm:pt-12 md:pt-16 z-20 relative">
           <SectionReveal>
-            <h2 className="font-sans text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] text-[#2D2D2D] font-extrabold leading-[1.05] mb-6 tracking-tight">
+            <h2 className="font-sans text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] text-[#2D2D2D] font-extrabold leading-[1.08] mb-4 sm:mb-6 tracking-tight">
               Premier Catering<br />
               Services Serving<br />
               Western MA
             </h2>
             
-            <h3 className="font-sans text-xl md:text-2xl text-[#6B6B6B] mb-8 font-normal">
+            <h3 className="font-sans text-lg sm:text-xl md:text-2xl text-[#6B6B6B] mb-6 sm:mb-8 font-normal">
               For any affair, on any budget.
             </h3>
             
@@ -44,9 +44,9 @@ export function PremiumIntroSection() {
           </SectionReveal>
         </div>
 
-        {/* Right Visual Area */}
-        <div className="md:col-span-6 lg:col-span-7 relative h-[450px] md:h-[600px] w-full flex items-center justify-end z-10 pointer-events-none">
-          {/* Empty area where the grinder used to be. The space is preserved to keep the left-aligned text perfectly formatted. */}
+        {/* Right Visual Area - Collapsed on mobile to eliminate blank gap */}
+        <div className="hidden md:flex md:col-span-6 lg:col-span-7 relative h-[500px] md:h-[600px] w-full items-center justify-end z-10 pointer-events-none">
+          {/* Empty area where the grinder used to be. The space is preserved on desktop to keep the left-aligned text perfectly formatted. */}
         </div>
 
       </div>

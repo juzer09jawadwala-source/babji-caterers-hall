@@ -49,7 +49,7 @@ export function DepthCarousel({ items }: DepthCarouselProps) {
         return (
           <motion.div
             key={i}
-            className="absolute top-1/2 left-1/2 w-[75vw] sm:w-[350px] md:w-[400px] lg:w-[450px]"
+            className="absolute top-1/2 left-1/2 w-[82vw] sm:w-[350px] md:w-[400px] lg:w-[450px] max-w-[450px]"
             initial={false}
             animate={{
               x: `calc(-50% + ${offset * spacing}%)`,
@@ -73,27 +73,27 @@ export function DepthCarousel({ items }: DepthCarouselProps) {
             onClick={() => setCurrentIndex(i)}
             style={{ cursor: isCenter ? 'grab' : 'pointer' }}
           >
-            <div className={`relative aspect-[3/4] md:aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl group border border-sand/30 transition-colors duration-500 ${isCenter ? 'ring-1 ring-gold/30' : ''}`}>
+            <div className={`relative aspect-[3/4] md:aspect-[4/5] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-2xl group border border-sand/30 transition-colors duration-500 ${isCenter ? 'ring-1 ring-gold/30' : ''}`}>
               <Image 
                 src={item.img} 
                 alt={item.title} 
                 fill 
                 className="object-cover transition-transform duration-1500 group-hover:scale-110" 
-                sizes="(max-width: 768px) 80vw, 400px"
+                sizes="(max-width: 768px) 85vw, 400px"
                 quality={85}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">
+              <div className="absolute inset-0 p-5 sm:p-8 md:p-10 flex flex-col justify-end">
                 <motion.div 
                   initial={false}
                   animate={{ opacity: isCenter ? 1 : 0, y: isCenter ? 0 : 20 }}
                   transition={{ duration: 0.5, delay: isCenter ? 0.2 : 0 }}
                 >
-                  <div className="w-12 h-px bg-gold mb-6" />
-                  <div className="font-sans text-[10px] tracking-[0.3em] text-gold uppercase font-bold mb-3">BABJI — MAZGAON</div>
-                  <h3 className="font-serif text-3xl md:text-4xl text-ivory mb-2 leading-tight">{item.title}</h3>
-                  <p className="font-sans text-ivory/80 text-sm mt-3">
+                  <div className="w-10 sm:w-12 h-px bg-gold mb-4 sm:mb-6" />
+                  <div className="font-sans text-[9px] sm:text-[10px] tracking-[0.3em] text-gold uppercase font-bold mb-2 sm:mb-3">BABJI — MAZGAON</div>
+                  <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-ivory mb-1 sm:mb-2 leading-tight">{item.title}</h3>
+                  <p className="font-sans text-ivory/80 text-xs sm:text-sm mt-2 sm:mt-3 line-clamp-3 sm:line-clamp-none">
                     {item.desc}
                   </p>
                 </motion.div>
@@ -103,14 +103,16 @@ export function DepthCarousel({ items }: DepthCarouselProps) {
         );
       })}
       
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 z-50">
+      <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1 sm:gap-2 z-50">
         {items.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrentIndex(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-1.5 rounded-full transition-all duration-500 ${i === currentIndex ? 'bg-gold w-8' : 'bg-gold/30 w-1.5 hover:bg-gold/50'}`}
-          />
+            className="p-2 min-h-[44px] flex items-center justify-center"
+          >
+            <span className={`h-1.5 rounded-full transition-all duration-500 block ${i === currentIndex ? 'bg-gold w-6 sm:w-8' : 'bg-gold/30 w-1.5 hover:bg-gold/50'}`} />
+          </button>
         ))}
       </div>
     </div>

@@ -62,22 +62,29 @@ export function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[70] bg-espresso/95 backdrop-blur-sm flex items-center justify-center p-6 md:p-12"
+            className="fixed inset-0 z-[70] bg-espresso/95 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 md:p-12"
             onClick={() => setLightboxOpen(false)}
           >
             <button
-              className="absolute top-6 right-6 text-ivory/50 hover:text-ivory transition-colors z-50 p-2"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 text-ivory/60 hover:text-ivory transition-colors z-50 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
               onClick={() => setLightboxOpen(false)}
               aria-label="Close"
             >
-              <X className="w-8 h-8" />
+              <X className="w-7 h-7 sm:w-8 sm:h-8" />
             </button>
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-5xl aspect-video md:aspect-[16/9] bg-transparent"
+              className="relative w-full max-w-5xl h-[65vh] sm:h-[75vh] max-h-[85vh] bg-transparent"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(e, { offset, velocity }) => {
+                if (offset.x < -40 || velocity.x < -400) setCurrentIndex((prev) => (prev + 1) % images.length);
+                else if (offset.x > 40 || velocity.x > 400) setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+              }}
               onClick={(e) => e.stopPropagation()}
             >
               <Image
@@ -89,18 +96,20 @@ export function Gallery() {
                 className="object-contain"
               />
               
-              <div className="absolute inset-y-0 left-0 flex items-center px-4">
+              <div className="absolute inset-y-0 left-2 sm:left-4 flex items-center">
                 <button
-                  className="w-12 h-12 rounded-full bg-espresso/50 text-ivory flex items-center justify-center backdrop-blur-md hover:bg-gold transition-colors shadow-xl"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-espresso/60 text-ivory flex items-center justify-center backdrop-blur-md hover:bg-gold transition-colors shadow-xl"
                   onClick={() => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)}
+                  aria-label="Previous image"
                 >
                   &larr;
                 </button>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center px-4">
+              <div className="absolute inset-y-0 right-2 sm:right-4 flex items-center">
                 <button
-                  className="w-12 h-12 rounded-full bg-espresso/50 text-ivory flex items-center justify-center backdrop-blur-md hover:bg-gold transition-colors shadow-xl"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-espresso/60 text-ivory flex items-center justify-center backdrop-blur-md hover:bg-gold transition-colors shadow-xl"
                   onClick={() => setCurrentIndex((prev) => (prev + 1) % images.length)}
+                  aria-label="Next image"
                 >
                   &rarr;
                 </button>

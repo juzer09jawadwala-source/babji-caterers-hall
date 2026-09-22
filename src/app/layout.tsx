@@ -50,6 +50,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5, // Allow zooming for accessibility
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({
@@ -90,10 +91,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased relative selection:bg-gold-light/40 selection:text-espresso">
+      <body className="font-sans antialiased relative selection:bg-gold-light/40 selection:text-espresso overflow-x-clip min-w-0">
         <ScrollProgress />
         <Header />
-        <main>{children}</main>
+        <main className="overflow-x-clip min-w-0">{children}</main>
         <Footer />
         <WhatsAppFloat />
       </body>

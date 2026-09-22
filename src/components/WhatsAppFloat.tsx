@@ -28,7 +28,7 @@ export function WhatsAppFloat() {
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
-          className="fixed bottom-6 right-6 z-50 flex flex-col items-end"
+          className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom,1.25rem))] right-[max(1.25rem,env(safe-area-inset-right,1.25rem))] z-50 flex flex-col items-end"
         >
           <AnimatePresence>
             {open && (
@@ -36,7 +36,7 @@ export function WhatsAppFloat() {
                 initial={{ opacity: 0, y: 10, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                className="mb-4 bg-white rounded-2xl shadow-soft p-4 w-64 border border-sand/50"
+                className="mb-3 sm:mb-4 bg-white rounded-2xl shadow-soft p-4 w-64 max-w-[calc(100vw-2.5rem)] border border-sand/50"
               >
                 <div className="flex justify-between items-center mb-3">
                   <h4 className="text-sm font-semibold text-espresso">Chat with us</h4>

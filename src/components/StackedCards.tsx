@@ -78,32 +78,32 @@ function Card({
         style={{ 
           scale, 
           y: yOffset,
-          top: `calc(15vh + ${index * 20}px)`,
+          top: `calc(12vh + ${index * 16}px)`,
           willChange: 'transform'
         }} 
-        className="relative w-[90vw] md:w-[800px] h-[55vh] md:h-[500px] rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgb(0,0,0,0.3)] origin-top border-4 border-ivory/30 group ring-1 ring-black/5"
+        className="relative w-[92vw] sm:w-[90vw] md:w-[800px] h-[52vh] sm:h-[55vh] md:h-[500px] rounded-[24px] sm:rounded-[36px] md:rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgb(0,0,0,0.3)] origin-top border-2 sm:border-4 border-ivory/30 group ring-1 ring-black/5"
       >
         <Image 
           src={item.img} 
           alt={item.name} 
           fill 
-          sizes="(max-width: 768px) 90vw, 800px"
+          sizes="(max-width: 768px) 92vw, 800px"
           quality={85}
           className="object-cover transition-transform duration-1500 ease-out group-hover:scale-105" 
         />
         
         {/* Luxury gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/20 to-transparent pointer-events-none opacity-80" />
-        <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[36px] pointer-events-none" />
+        <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[20px] sm:rounded-[32px] md:rounded-[36px] pointer-events-none" />
         
         {/* Badge */}
-        <div className="absolute top-8 left-8 md:top-10 md:left-10 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20 shadow-lg">
-          <span className="font-sans text-[10px] md:text-xs tracking-[0.25em] text-ivory uppercase font-bold drop-shadow-md">{item.badge}</span>
+        <div className="absolute top-5 left-5 sm:top-8 sm:left-8 md:top-10 md:left-10 bg-white/10 backdrop-blur-md px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full border border-white/20 shadow-lg">
+          <span className="font-sans text-[9px] sm:text-[10px] md:text-xs tracking-[0.25em] text-ivory uppercase font-bold drop-shadow-md">{item.badge}</span>
         </div>
 
         {/* Title */}
-        <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12 md:right-12">
-          <h3 className="font-serif text-3xl md:text-5xl lg:text-6xl text-ivory tracking-wide font-medium drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">{item.name}</h3>
+        <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 md:bottom-12 md:left-12 md:right-12">
+          <h3 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-ivory tracking-wide font-medium drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">{item.name}</h3>
         </div>
       </motion.div>
     </div>

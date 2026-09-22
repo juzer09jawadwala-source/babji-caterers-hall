@@ -14,7 +14,7 @@ export function SectionReveal({
 }) {
   const ref = useRef(null);
   const shouldReduceMotion = useReducedMotion();
-  const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -40px 0px" });
 
   if (shouldReduceMotion) {
     return <div className={className}>{children}</div>;

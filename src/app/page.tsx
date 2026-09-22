@@ -6,33 +6,34 @@ import { HeroVideo } from '@/components/HeroVideo';
 import { StackedCards } from '@/components/StackedCards';
 import { Carousel3D } from '@/components/Carousel3D';
 import { AboutShelfSection } from '@/components/AboutShelfSection';
+import { AnimatedNumberBasic } from '@/components/AnimatedNumberBasic';
 
 export default function Home() {
   return (
     <div className="bg-ivory selection:bg-gold-light/40 selection:text-espresso">
       {/* 5.1 Hero (video) */}
-      <section className="relative w-full min-h-screen bg-espresso flex items-end pb-24 md:pb-32 pt-40 md:pt-48 px-6 md:px-12 z-10 overflow-hidden">
+      <section className="relative w-full min-h-screen bg-espresso flex items-end pb-16 sm:pb-24 md:pb-32 pt-32 sm:pt-40 md:pt-48 px-4 sm:px-6 md:px-12 z-10 overflow-hidden">
         <HeroVideo src="/videos/251512.mp4" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
         
         <div className="relative z-10 max-w-[1240px] mx-auto w-full">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-end mb-16 md:mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-8 items-end mb-12 sm:mb-16 md:mb-24">
             <div className="md:col-span-7">
-              <div className="eyebrow start mb-8">EST. 1965</div>
-              <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] text-ivory tracking-tight">
+              <div className="eyebrow start mb-6 sm:mb-8">EST. 1965</div>
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] text-ivory tracking-tight">
                 A family kitchen<br />
                 serving Mazgaon<br />
                 since 1965.
               </h1>
             </div>
-            <div className="md:col-span-4 md:col-start-9 flex flex-col gap-8 pb-4">
-              <p className="text-ivory/80 text-lg leading-relaxed font-sans text-balance">
+            <div className="md:col-span-4 md:col-start-9 flex flex-col gap-6 sm:gap-8 pb-4">
+              <p className="text-ivory/80 text-base sm:text-lg leading-relaxed font-sans text-balance">
                 Babji is a warm neighbourhood name — a small family setup that grew because guests kept coming back for the biryani. Today we cater full weddings and pre-wedding functions, and open our own hall for the celebrations that matter most.
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 title: "Full-service catering",
@@ -48,10 +49,10 @@ export default function Home() {
               }
             ].map((card, i) => (
               <SectionReveal key={i} delay={i * 0.1}>
-                <div className="bg-espresso-soft/80 backdrop-blur-md rounded-[16px] p-8 shadow-soft border border-ivory/10">
+                <div className="bg-espresso-soft/80 backdrop-blur-md rounded-[16px] p-6 sm:p-8 shadow-soft border border-ivory/10">
                   <div className="font-sans text-[10px] tracking-[0.2em] text-gold uppercase mb-4 font-semibold">Babji</div>
-                  <h3 className="font-serif text-2xl text-ivory mb-2">{card.title}</h3>
-                  <p className="text-ivory/60 font-sans text-sm">{card.sub}</p>
+                  <h3 className="font-serif text-xl sm:text-2xl text-ivory mb-2">{card.title}</h3>
+                  <p className="text-ivory/60 font-sans text-xs sm:text-sm">{card.sub}</p>
                 </div>
               </SectionReveal>
             ))}
@@ -59,8 +60,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2000+ Animated Counter */}
+      <AnimatedNumberBasic />
+
       {/* 5.2 The family story (sand) */}
-      <section className="bg-sand py-24 md:py-32 px-6 md:px-12 -mt-[40px] pt-[80px] relative z-0">
+      <section className="bg-sand py-24 md:py-32 px-6 md:px-12 relative z-0">
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <SectionReveal>
             <h2 className="font-serif text-4xl md:text-5xl text-espresso mb-6 leading-[1.05]">
@@ -211,18 +215,18 @@ export default function Home() {
       </section>
 
       {/* 5.6 Dark CTA (espresso) - Pro Editorial Redesign */}
-      <section className="bg-espresso py-32 px-6 md:px-12 relative overflow-hidden">
+      <section className="bg-espresso py-20 sm:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden">
         {/* Subtle glowing orb in background */}
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gold/5 blur-[120px] pointer-events-none" />
 
-        <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+        <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
           <div className="lg:col-span-8">
             <SectionReveal>
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-px bg-gold" />
+              <div className="flex items-center gap-4 mb-6 sm:mb-8">
+                <div className="w-10 sm:w-12 h-px bg-gold" />
                 <div className="font-sans text-[10px] tracking-[0.3em] text-gold uppercase font-bold">READY TO SERVE</div>
               </div>
-              <h2 className="font-serif text-5xl md:text-7xl lg:text-[6rem] text-ivory leading-[0.95] tracking-tight mb-8">
+              <h2 className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-[6rem] text-ivory leading-[1.0] tracking-tight mb-6 sm:mb-8">
                 Ready to serve <br />
                 <span className="italic text-gold-light/90">these delicacies</span> <br />
                 at your event?
@@ -230,17 +234,17 @@ export default function Home() {
             </SectionReveal>
           </div>
           
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-end text-left lg:text-right border-l lg:border-l-0 lg:border-r border-gold/20 pl-8 lg:pl-0 lg:pr-8 py-4">
+          <div className="lg:col-span-4 flex flex-col items-start lg:items-end text-left lg:text-right border-l lg:border-l-0 lg:border-r border-gold/20 pl-4 sm:pl-8 lg:pl-0 lg:pr-8 py-2 sm:py-4">
             <SectionReveal delay={0.1}>
-              <p className="font-sans text-ivory/70 text-lg leading-relaxed mb-10 max-w-sm">
+              <p className="font-sans text-ivory/70 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 max-w-sm">
                 Tell us the date and guest count. We'll cook these for you — plus a menu shaped perfectly around your celebration.
               </p>
-              <div className="flex flex-col gap-4 w-full sm:w-auto">
-                <Link href="/catering" className="group flex items-center justify-between gap-6 bg-gold text-espresso rounded-full px-8 py-5 font-semibold text-sm tracking-widest uppercase hover:bg-gold-light transition-all shadow-[0_0_40px_rgba(201,169,97,0.15)]">
+              <div className="flex flex-col gap-3 sm:gap-4 w-full sm:w-auto">
+                <Link href="/catering" className="group flex items-center justify-between gap-6 bg-gold text-espresso rounded-full px-6 sm:px-8 py-4 sm:py-5 font-semibold text-xs sm:text-sm tracking-widest uppercase hover:bg-gold-light transition-all shadow-[0_0_40px_rgba(201,169,97,0.15)]">
                   <span>Book Catering</span>
                   <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
                 </Link>
-                <Link href="/catering" className="group flex items-center justify-between gap-6 rounded-full px-8 py-5 font-semibold text-sm tracking-widest uppercase border border-ivory/20 text-ivory hover:bg-ivory hover:text-espresso transition-all">
+                <Link href="/catering" className="group flex items-center justify-between gap-6 rounded-full px-6 sm:px-8 py-4 sm:py-5 font-semibold text-xs sm:text-sm tracking-widest uppercase border border-ivory/20 text-ivory hover:bg-ivory hover:text-espresso transition-all">
                   <span>View Full Menu</span>
                   <span className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all">&rarr;</span>
                 </Link>
@@ -251,20 +255,20 @@ export default function Home() {
       </section>
 
       {/* 5.7 Highlights gallery (ivory) - Redesigned Editorial Portrait Slider */}
-      <section className="bg-ivory py-32 pl-6 md:pl-12 overflow-hidden relative">
-        <div className="max-w-[1240px] mx-auto mb-16 pr-6 md:pr-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <section className="bg-ivory py-20 sm:py-32 pl-4 sm:pl-6 md:pl-12 overflow-hidden relative">
+        <div className="max-w-[1240px] mx-auto mb-12 sm:mb-16 pr-4 sm:pr-6 md:pr-12 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8">
           <SectionReveal>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-px bg-gold" />
+            <div className="flex items-center gap-4 mb-4 sm:mb-6">
+              <div className="w-10 sm:w-12 h-px bg-gold" />
               <div className="font-sans text-[10px] tracking-[0.3em] text-gold uppercase font-bold">HIGHLIGHTS</div>
             </div>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-espresso leading-[1.05] tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-espresso leading-[1.05] tracking-tight">
               Recent plates, <br />
               <span className="italic text-gold">recent celebrations.</span>
             </h2>
           </SectionReveal>
           <SectionReveal delay={0.1}>
-            <p className="font-sans text-ink/70 text-lg leading-relaxed max-w-sm pb-2">
+            <p className="font-sans text-ink/70 text-base sm:text-lg leading-relaxed max-w-sm pb-2">
               Scroll horizontally through a few moments from recent functions at Babji.
             </p>
           </SectionReveal>

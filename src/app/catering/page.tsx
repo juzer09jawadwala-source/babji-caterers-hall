@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { SectionReveal } from '@/components/SectionReveal';
 import { EnquiryForm } from '@/components/EnquiryForm';
+import { AnimatedNumberBasic } from '@/components/AnimatedNumberBasic';
 
 export const metadata = {
   title: 'Catering & Menu | Babji Caterers',
@@ -61,33 +62,33 @@ export default function CateringPage() {
           </div>
 
           {/* Right Content Area (Image + Testimonial Overlap) */}
-          <div className="w-full md:w-[45%] mt-16 md:mt-0 relative flex flex-col items-end">
+          <div className="w-full md:w-[45%] mt-12 md:mt-0 relative flex flex-col items-end">
             <SectionReveal delay={0.2} className="relative w-full flex justify-end">
-              <div className="relative w-[100vw] md:w-[45vw] h-[50vh] md:h-[65vh] mr-[-24px] md:mr-[-48px]">
+              <div className="relative w-full md:w-[45vw] h-[45vh] sm:h-[50vh] md:h-[65vh] mr-0 md:mr-[-48px]">
                 <Image 
                   src="/images/hall_12.jpg" 
                   alt="Catering Setup" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 45vw"
                   quality={85}
-                  className="object-cover rounded-bl-[40px] md:rounded-bl-[80px]" 
+                  className="object-cover rounded-[24px] sm:rounded-none sm:rounded-bl-[40px] md:rounded-bl-[80px]" 
                 />
               </div>
 
               {/* Overlapping Testimonial Card */}
-              <div className="absolute -bottom-16 md:-bottom-24 right-4 md:-left-20 z-20 bg-[#FAF8F5] p-8 md:p-10 rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.15)] max-w-sm border border-espresso/5">
-                <div className="absolute top-8 right-8 text-espresso/5">
-                  <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+              <div className="absolute -bottom-12 sm:-bottom-16 md:-bottom-24 right-2 sm:right-4 md:-left-20 z-20 bg-[#FAF8F5] p-6 sm:p-8 md:p-10 rounded-[20px] sm:rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.15)] max-w-xs sm:max-w-sm border border-espresso/5">
+                <div className="absolute top-6 right-6 sm:top-8 sm:right-8 text-espresso/5">
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
                   </svg>
                 </div>
-                <div className="flex items-center gap-2 mb-6 text-gold">
+                <div className="flex items-center gap-2 mb-4 sm:mb-6 text-gold">
                   <div className="w-6 h-6 bg-forest rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-ivory rounded-full"></div>
                   </div>
                   <span className="font-sans font-bold text-sm tracking-wider text-espresso">Babji</span>
                 </div>
-                <p className="font-serif text-xl md:text-2xl text-forest leading-snug mb-8 relative z-10">
+                <p className="font-serif text-lg sm:text-xl md:text-2xl text-forest leading-snug mb-6 sm:mb-8 relative z-10">
                   "The food was brilliant, Babji made everything so easy that we can't wait to use them again."
                 </p>
                 <div className="flex items-center gap-2">
@@ -101,7 +102,7 @@ export default function CateringPage() {
         </div>
 
         {/* Overlapping Food Plate floating on the bottom left edge */}
-        <div className="absolute bottom-0 left-[-20%] md:left-[-10%] w-[300px] h-[300px] md:w-[450px] md:h-[450px] z-20 pointer-events-none transform translate-y-[30%]">
+        <div className="absolute bottom-0 left-[-20%] md:left-[-10%] w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[450px] md:h-[450px] z-20 pointer-events-none transform translate-y-[30%]">
           <Image 
             src="/images/chicken.png" 
             alt="Floating Plate" 
@@ -113,8 +114,11 @@ export default function CateringPage() {
         </div>
       </section>
 
+      {/* 2000+ Animated Counter */}
+      <AnimatedNumberBasic />
+
       {/* 6.2 Packages (ivory) */}
-      <section id="menu" className="bg-ivory py-24 md:py-32 px-6 md:px-12 -mt-[40px] pt-[80px]">
+      <section id="menu" className="bg-ivory py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 relative z-0">
         <div className="max-w-[1240px] mx-auto">
           <div className="flex flex-col items-center text-center mb-20">
             <div className="eyebrow mb-6">MENU & PACKAGES</div>

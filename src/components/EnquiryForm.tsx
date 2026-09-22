@@ -78,16 +78,16 @@ export function EnquiryForm() {
 
   return (
     <div className="w-full">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-6">
         {/* Anti-spam honeypot */}
         <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           <div className="flex flex-col gap-2">
             <label className="font-sans text-[11px] tracking-[0.2em] text-gold uppercase">Function Type</label>
             <select
               required
-              className="bg-espresso-soft border border-ivory/10 text-ivory p-4 rounded-xl input-gold-focus appearance-none"
+              className="bg-espresso-soft border border-ivory/10 text-ivory p-3.5 sm:p-4 rounded-xl input-gold-focus text-base md:text-sm appearance-none"
               value={formData.functionType}
               onChange={(e) => setFormData({ ...formData, functionType: e.target.value })}
             >
@@ -106,14 +106,14 @@ export function EnquiryForm() {
             <input
               type="date"
               required
-              className="bg-espresso-soft border border-ivory/10 text-ivory p-4 rounded-xl input-gold-focus"
+              className="bg-espresso-soft border border-ivory/10 text-ivory p-3.5 sm:p-4 rounded-xl input-gold-focus text-base md:text-sm"
               value={formData.date}
               onChange={(e) => setFormData({ ...formData, date: e.target.value })}
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           <div className="flex flex-col gap-2">
             <label className="font-sans text-[11px] tracking-[0.2em] text-gold uppercase">Guest Count</label>
             <input
@@ -121,7 +121,7 @@ export function EnquiryForm() {
               required
               min="10"
               placeholder="e.g. 150"
-              className="bg-espresso-soft border border-ivory/10 text-ivory p-4 rounded-xl input-gold-focus placeholder:text-ivory/30"
+              className="bg-espresso-soft border border-ivory/10 text-ivory p-3.5 sm:p-4 rounded-xl input-gold-focus text-base md:text-sm placeholder:text-ivory/30"
               value={formData.guests}
               onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
             />
@@ -132,7 +132,7 @@ export function EnquiryForm() {
               type="text"
               required
               placeholder="Full name"
-              className="bg-espresso-soft border border-ivory/10 text-ivory p-4 rounded-xl input-gold-focus placeholder:text-ivory/30"
+              className="bg-espresso-soft border border-ivory/10 text-ivory p-3.5 sm:p-4 rounded-xl input-gold-focus text-base md:text-sm placeholder:text-ivory/30"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             />
@@ -147,7 +147,7 @@ export function EnquiryForm() {
             pattern="[0-9]{10}"
             title="Enter a 10-digit mobile number"
             placeholder="+91 XXXXX XXXXX"
-            className="bg-espresso-soft border border-ivory/10 text-ivory p-4 rounded-xl input-gold-focus placeholder:text-ivory/30"
+            className="bg-espresso-soft border border-ivory/10 text-ivory p-3.5 sm:p-4 rounded-xl input-gold-focus text-base md:text-sm placeholder:text-ivory/30"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '').slice(0, 10) })}
           />
@@ -158,7 +158,7 @@ export function EnquiryForm() {
           <textarea
             rows={3}
             placeholder="Menu preferences, decor needs, dietary notes…"
-            className="bg-espresso-soft border border-ivory/10 text-ivory p-4 rounded-xl input-gold-focus placeholder:text-ivory/30 resize-none"
+            className="bg-espresso-soft border border-ivory/10 text-ivory p-3.5 sm:p-4 rounded-xl input-gold-focus text-base md:text-sm placeholder:text-ivory/30 resize-none"
             value={formData.notes}
             onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
           />

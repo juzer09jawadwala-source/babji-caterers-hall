@@ -5,6 +5,7 @@ import { EnquiryForm } from '@/components/EnquiryForm';
 import { Gallery } from '@/components/Gallery';
 import { HeroVideo } from '@/components/HeroVideo';
 import { PremiumIntroSection } from '@/components/PremiumIntroSection';
+import { AnimatedNumberBasic } from '@/components/AnimatedNumberBasic';
 
 export const metadata = {
   title: 'The Hall | Babji Caterers & Hall',
@@ -16,17 +17,17 @@ export default function HallPage() {
     <div className="bg-ivory selection:bg-gold-light/40 selection:text-espresso">
       
       {/* 1. Cinematic Hero */}
-      <section className="relative w-full min-h-screen bg-espresso flex items-end pb-16 md:pb-24 px-6 md:px-12 shadow-2xl z-10 overflow-hidden">
+      <section className="relative w-full min-h-screen bg-espresso flex items-end pb-12 sm:pb-16 md:pb-24 px-4 sm:px-6 md:px-12 shadow-2xl z-10 overflow-hidden">
         <HeroVideo src="/videos/hall.mp4" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
         
         <div className="relative z-10 w-full max-w-[1240px] mx-auto flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-px bg-gold" />
+            <div className="flex items-center gap-4 mb-6 sm:mb-8">
+              <div className="w-10 sm:w-12 h-px bg-gold" />
               <span className="font-sans text-[10px] tracking-[0.2em] text-gold uppercase font-bold">The Venue</span>
             </div>
-            <h1 className="font-serif text-6xl md:text-8xl lg:text-[7rem] text-ivory leading-[0.95] tracking-tight">
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-8xl lg:text-[7rem] text-ivory leading-[0.98] tracking-tight">
               The Hall <br />
               <span className="italic text-gold-light/90">at</span> Sitafalwadi
             </h1>
@@ -38,10 +39,13 @@ export default function HallPage() {
         </div>
       </section>
 
+      {/* 2000+ Animated Counter */}
+      <AnimatedNumberBasic />
+
       <PremiumIntroSection />
 
       {/* 2. Split Editorial Specs (ivory) */}
-      <section className="bg-ivory pb-32 px-6 md:px-12 relative z-0">
+      <section className="bg-ivory pb-20 sm:pb-32 px-4 sm:px-6 md:px-12 relative z-0">
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
           <div className="lg:col-span-5 sticky top-32 hidden lg:block">
             {/* Kept empty to preserve the grid spacing for the specs list */}

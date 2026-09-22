@@ -35,7 +35,7 @@ export function InterviewPlayer({ src, poster = '/videos/interview-poster.jpg' }
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-sm mx-auto aspect-[9/16] rounded-[32px] overflow-hidden shadow-soft cursor-pointer isolate group"
+      className="relative w-full max-w-[280px] sm:max-w-sm mx-auto aspect-[9/16] max-h-[70vh] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-soft cursor-pointer isolate group"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={togglePlay}
@@ -63,9 +63,9 @@ export function InterviewPlayer({ src, poster = '/videos/interview-poster.jpg' }
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="w-16 h-16 rounded-full bg-ivory flex items-center justify-center shadow-lg text-espresso"
+          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-ivory flex items-center justify-center shadow-lg text-espresso"
         >
-          {playing ? <Pause className="w-6 h-6 fill-current" /> : <Play className="w-6 h-6 fill-current ml-1" />}
+          {playing ? <Pause className="w-5 h-5 sm:w-6 sm:h-6 fill-current" /> : <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current ml-1" />}
         </motion.div>
       </div>
     </div>

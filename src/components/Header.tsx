@@ -86,7 +86,7 @@ export function Header() {
 
           {/* Mobile Toggle */}
           <button
-            className={`md:hidden transition-colors duration-300 ${scrolled ? 'text-espresso' : 'text-ivory drop-shadow-md'}`}
+            className={`md:hidden p-2 -mr-2 min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors duration-300 ${scrolled ? 'text-espresso' : 'text-ivory drop-shadow-md'}`}
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open menu"
           >
@@ -103,9 +103,9 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[60] bg-espresso text-ivory flex flex-col p-6 md:px-12"
+            className="fixed inset-0 z-[60] bg-espresso text-ivory flex flex-col p-6 sm:p-8 md:px-12 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))] overflow-y-auto"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between shrink-0">
               <Link href="/" className="flex items-center gap-4" onClick={() => setMobileMenuOpen(false)}>
                 <div className="w-10 h-10 rounded-full bg-forest flex items-center justify-center">
                   <svg className="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -116,29 +116,33 @@ export function Header() {
                   <span className="font-serif text-2xl leading-none tracking-wide text-ivory">Babji</span>
                 </div>
               </Link>
-              <button onClick={() => setMobileMenuOpen(false)} aria-label="Close menu" className="p-2">
-                <X className="w-8 h-8 text-ivory" />
+              <button 
+                onClick={() => setMobileMenuOpen(false)} 
+                aria-label="Close menu" 
+                className="p-2 -mr-2 min-h-[44px] min-w-[44px] flex items-center justify-center text-ivory hover:text-gold transition-colors"
+              >
+                <X className="w-7 h-7" />
               </button>
             </div>
 
-            <nav className="flex flex-col gap-8 mt-24">
+            <nav className="flex flex-col gap-6 sm:gap-8 mt-12 sm:mt-16 md:mt-24">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-serif text-5xl text-ivory/90 hover:text-gold transition-colors"
+                  className="font-serif text-3xl sm:text-4xl md:text-5xl text-ivory/90 hover:text-gold transition-colors tracking-tight"
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
 
-            <div className="mt-auto mb-10 flex flex-col gap-4">
-              <a href="https://wa.me/918976086766" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-forest text-ivory font-medium">
+            <div className="mt-12 sm:mt-auto mb-4 sm:mb-8 flex flex-col gap-3 sm:gap-4 shrink-0">
+              <a href="https://wa.me/918976086766" className="w-full flex items-center justify-center gap-2 py-3.5 sm:py-4 rounded-xl bg-forest text-ivory font-medium text-sm sm:text-base hover:brightness-110 transition-all">
                 WhatsApp Kasim
               </a>
-              <a href="https://wa.me/919664074104" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl border border-ivory/20 text-ivory font-medium">
+              <a href="https://wa.me/919664074104" className="w-full flex items-center justify-center gap-2 py-3.5 sm:py-4 rounded-xl border border-ivory/20 text-ivory font-medium text-sm sm:text-base hover:bg-ivory/10 transition-all">
                 WhatsApp Burhan
               </a>
             </div>
